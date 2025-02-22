@@ -7,81 +7,95 @@
     <style>
         body {
             background-image: url('https://u.cubeupload.com/gazoulpv_vql/k0NwY0pKnVzNRxR17401.png');
-            background-size: cover;
-            background-position: top;
+            background-size: 150% auto; /* 画像を大きくする */
+            background-position: left top; /* 左上に揃える */
             background-repeat: no-repeat;
-            height: 100vh;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: black;
             font-family: terminal, monaco, monospace;
             text-align: center;
+            color: black;
+            position: relative;
         }
+
+        /* 背景を白っぽくする */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6); /* 透明度を調整 */
+            z-index: -1;
+        }
+
         ul {
             text-align: left;
         }
+
         h1#hello {
-            font-size: 100pt;
+            font-size: 100pt; /* 元の大きさに戻す */
         }
+
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 50px 10%;
+        }
     </style>
 </head>
 <body>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1 id="hello" class="fade-in">Hello!</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <h1 class="fade-in">lpv_vqlのホームページ</h1>
-    <h2 class="fade-in">自己紹介</h2>
-    <ul class="fade-in" style="list-style-type: square;">
-        <li>中1です。</li>
-        <li>Pythonが少しできます。</li>
-        <li>3DCAD(Autodesk Fusion)も少しできます。</li>
-        <li>3Dが大好きです。</li>
-        <li>魚派です。あとおでんが好きです。</li>
-        <li>I am not good at English.</li>
-        <li style="font-size: 8pt;">ゴキブリはかわいいです。</li>
-    </ul>
-    <h1>&nbsp;</h1>
-    <h2 class="fade-in">お知らせ</h2>
-    <ul class="fade-in" style="list-style-type: square;">
-        <li>(scratch) 2025.02.06 フォロワー300人突破! ありがとうございます!</li>
-    </ul>
-    <h1>&nbsp;</h1>
-    <p class="fade-in"><span style="color: black; font-size: 20pt;"><a style="color: black; text-decoration: underline;" href="https://lpv-vql.github.io/lpv_vql-blog/">Blog</a></span></p>
-    <ul class="fade-in" style="list-style-type: square;">
-        <li>lpv_vqlのブログです。</li>
-        <li>作成中...</li>
-    </ul>
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
-    <p class="fade-in"><span style="color: black;">&copy; 2025 <a style="color: black;" href="https://scratch.mit.edu/users/lpv_vql/" target="_blank" rel="noopener">lpv_vql</a></span></p>
-    <h1>&nbsp;</h1>
+    <div class="container">
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1 id="hello" class="fade-in">Hello!</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1 class="fade-in">lpv_vqlのホームページ</h1>
+        <h2 class="fade-in">自己紹介</h2>
+        <ul class="fade-in" style="list-style-type: square;">
+            <li>中1です。</li>
+            <li>Pythonが少しできます。</li>
+            <li>3DCAD(Autodesk Fusion)も少しできます。</li>
+            <li>3Dが大好きです。</li>
+            <li>魚派です。あとおでんが好きです。</li>
+            <li>I am not good at English.</li>
+            <li style="font-size: 8pt;">ゴキブリはかわいいです。</li>
+        </ul>
+        <h1>&nbsp;</h1>
+        <h2 class="fade-in">お知らせ</h2>
+        <ul class="fade-in" style="list-style-type: square;">
+            <li>(scratch) 2025.02.06 フォロワー300人突破! ありがとうございます!</li>
+        </ul>
+        <h1>&nbsp;</h1>
+        <p class="fade-in"><span style="color: black; font-size: 20pt;">
+            <a style="color: black; text-decoration: underline;" href="https://lpv-vql.github.io/lpv_vql-blog/">Blog</a>
+        </span></p>
+        <ul class="fade-in" style="list-style-type: square;">
+            <li>lpv_vqlのブログです。</li>
+            <li>作成中...</li>
+        </ul>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <p class="fade-in">
+            <span>&copy; 2025 <a style="color: black;" href="https://scratch.mit.edu/users/lpv_vql/" target="_blank" rel="noopener">lpv_vql</a></span>
+        </p>
+        <h1>&nbsp;</h1>
+    </div>
 
     <script>
         let messages = ["Hello!", "Welcome!", "こんにちは!", "ようこそ!"];
