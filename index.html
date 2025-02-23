@@ -8,8 +8,8 @@
     <style>
         body {
             background-image: url('https://u.cubeupload.com/gazoulpv_vql/k0NwY0pKnVzNRxR17401.png');
-            background-size: 150% auto; /* 画像を大きくする */
-            background-position: left top; /* 左上に揃える */
+            background-size: 150% auto;
+            background-position: left top;
             background-repeat: no-repeat;
             margin: 0;
             font-family: terminal, monaco, monospace;
@@ -18,7 +18,6 @@
             position: relative;
         }
 
-        /* 背景を白っぽくする */
         body::before {
             content: "";
             position: fixed;
@@ -26,18 +25,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.3); /* 透明度を調整 */
+            background: rgba(255, 255, 255, 0.3);
             z-index: -1;
         }
 
         ul {
-            display: inline-block; /* 全体を中央揃え */
-            text-align: left; /* 項目は左揃え */
-            padding-left: 20px; /* 左端を少し空ける */
+            display: inline-block;
+            text-align: left;
+            padding-left: 20px;
         }
 
         h1#hello {
-            font-size: 100pt; /* 元の大きさに戻す */
+            font-size: 100pt;
         }
 
         .fade-in {
@@ -108,7 +107,6 @@
             document.getElementById("hello").innerText = messages[index];
         }, 2000);
 
-        // スクロール時にフェードインさせる処理
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
