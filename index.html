@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lpv_vql</title>
@@ -61,21 +61,27 @@
             top: 10px;
             left: 10px;
             display: flex;
-            gap: 10px;
+            gap: 20px; /* ちょっと間隔を広げた */
             flex-direction: column;
             text-align: left;
+            z-index: 2; /* ここでリンクが前面に出るように！ */
         }
 
         .nav-links a {
+            font-size: 20pt; /* 大きめのリンクに！ */
             color: black;
             text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline; /* マウスホバーで線が出る */
         }
     </style>
 </head>
 <body>
     <div class="nav-links">
         <a href="https://lpv-vql.github.io/lpv_vql-profile/">HOME</a>
-        <a href="https://lpv-vql.github.io/lpv_vql-blog/">bLOG</a>
+        <a href="https://lpv-vql.github.io/lpv_vql-blog/">BLOG</a>
         <a href="https://lpv-vql.github.io/lpv_vql-notice/">TOOL</a>
     </div>
 
@@ -144,4 +150,3 @@
     </script>
 </body>
 </html>
-
