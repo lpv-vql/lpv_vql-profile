@@ -13,12 +13,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* 上寄せ */
+            justify-content: flex-start;
             height: 100vh;
             margin: 0;
             overflow-y: scroll;
             backdrop-filter: blur(5px);
-            padding-top: 80px; /* 上部の余白を大きめに設定 */
+            padding-top: 80px;
         }
         header {
             display: flex;
@@ -75,7 +75,7 @@
                 setTimeout(() => {
                     section.style.opacity = '1';
                     section.style.transform = 'translateY(0)';
-                }, 300 * index); // 順にフェードイン
+                }, 300 * index);
             });
         };
     </script>
