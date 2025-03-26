@@ -8,13 +8,14 @@
         body {
             background-image: url('https://u.cubeupload.com/gazoulpv_vql/k0NwY0pKnVzNRxR17401.png');
             background-size: cover;
+            background-attachment: fixed; /* 背景画像を固定 */
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             overflow-y: scroll;
             backdrop-filter: blur(5px);
@@ -28,6 +29,9 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
+            position: fixed;
+            top: 20px; /* 上の余白を確保 */
+            z-index: 10;
         }
         header img {
             height: 50px;
@@ -44,11 +48,18 @@
             color: #00c3ff;
             transform: scale(1.1);
         }
+        main {
+            margin-top: 100px; /* ヘッダーの高さ分の余白を確保 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+        }
         section {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
-            width: 80%;
+            width: 100%;
             text-align: center;
             margin-bottom: 20px;
             opacity: 0;
@@ -75,13 +86,12 @@
                 setTimeout(() => {
                     section.style.opacity = '1';
                     section.style.transform = 'translateY(0)';
-                }, 300 * index);
+                }, 300 * index); // 順にフェードイン
             });
         };
     </script>
 </head>
 <body>
-
     <header>
         <img src="https://u.cubeupload.com/gazoulpv_vql/icon13.png" alt="lpv_vqlのアイコン">
         <nav>
@@ -89,28 +99,30 @@
             <a href="https://lpv-vql.github.io/lpv_vql-tool/">ツール</a>
         </nav>
     </header>
-    <section>
-        <h1>lpv_vqlのHP</h1>
-        <p>中2です。ゲームを作ったり、ロボットを作ったり、絵をかいたりしています。<br>
-        3DCAD(Autodesk Fusion)による設計が少しできます。<br>
-        3Dが大好きです。魚派です。あとおでんが好きです。<br>
-        scratch愛ならだれにも負けない</p>
-    </section>
-    <section>
-        <h2>言語</h2>
-        <p>Python (scratchattachとか)<br>
-        C# (Unity)<br>
-        C++ (Arduino)<br>
-        HTML/CSS<br>
-        </p>
-    </section>
-    <section>
-        <h2>アカウント</h2>
-        <ul>
-            <li>Scratch: <a href="https://scratch.mit.edu/users/lpv_vql/">@lpv_vql</a>, <a href="https://scratch.mit.edu/users/Ougonhi_Hakuginhi/">@Ougonhi_Hakuginhi</a>, <a href="https://scratch.mit.edu/users/sub_pv/">@sub_pv</a></li>
-            <li>GitHub: <a href="https://github.com/lpv-vql/">@lpv-vql</a></li>
-            <li>YouTube: <a href="https://www.youtube.com/@lpv_vql">@lpv_vql</a></li>
-        </ul>
-    </section>
+    <main>
+        <section>
+            <h1>lpv_vqlのHP</h1>
+            <p>中2です。ゲームを作ったり、ロボットを作ったり、絵をかいたりしています。<br>
+            3DCAD(Autodesk Fusion)による設計が少しできます。<br>
+            3Dが大好きです。魚派です。あとおでんが好きです。<br>
+            scratch愛ならだれにも負けない</p>
+        </section>
+        <section>
+            <h2>言語</h2>
+            <p>Python (scratchattachとか)<br>
+            C# (Unity)<br>
+            C++ (Arduino)<br>
+            HTML/CSS<br>
+            </p>
+        </section>
+        <section>
+            <h2>アカウント</h2>
+            <ul>
+                <li>Scratch: <a href="https://scratch.mit.edu/users/lpv_vql/">@lpv_vql</a>, <a href="https://scratch.mit.edu/users/Ougonhi_Hakuginhi/">@Ougonhi_Hakuginhi</a>, <a href="https://scratch.mit.edu/users/sub_pv/">@sub_pv</a></li>
+                <li>GitHub: <a href="https://github.com/lpv-vql/">@lpv-vql</a></li>
+                <li>YouTube: <a href="https://www.youtube.com/@lpv_vql">@lpv_vql</a></li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
