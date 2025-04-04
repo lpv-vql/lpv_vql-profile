@@ -8,7 +8,7 @@
         body {
             background-image: url('https://u.cubeupload.com/gazoulpv_vql/k0NwY0pKnVzNRxR17401.png');
             background-size: cover;
-            background-attachment: fixed; /* 背景画像を固定 */
+            background-attachment: fixed;
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -30,7 +30,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             position: fixed;
-            top: 20px; /* 上の余白を確保 */
+            top: 20px;
             z-index: 10;
         }
         header img {
@@ -49,7 +49,7 @@
             transform: scale(1.1);
         }
         main {
-            margin-top: 100px; /* ヘッダーの高さ分の余白を確保 */
+            margin-top: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -86,7 +86,7 @@
                 setTimeout(() => {
                     section.style.opacity = '1';
                     section.style.transform = 'translateY(0)';
-                }, 300 * index); // 順にフェードイン
+                }, 300 * index);
             });
         };
     </script>
