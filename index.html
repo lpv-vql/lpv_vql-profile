@@ -1,128 +1,351 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lpv_vql | HP</title>
-    <style>
-        body {
-            background-image: url('https://u.cubeupload.com/gazoulpv_vql/k0NwY0pKnVzNRxR17401.png');
-            background-size: cover;
-            background-attachment: fixed;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            overflow-y: scroll;
-            backdrop-filter: blur(5px);
-            padding-top: 80px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            position: fixed;
-            top: 20px;
-            z-index: 10;
-        }
-        header img {
-            height: 50px;
-            border-radius: 50%;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: transform 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            color: #00c3ff;
-            transform: scale(1.1);
-        }
-        main {
-            margin-top: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-        }
-        section {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        ul li a:hover {
-            color: #00c3ff;
-        }
-    </style>
-    <script>
-        window.onload = () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                setTimeout(() => {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 300 * index);
-            });
-        };
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lpv_vql</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+    #gameCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1; /* canvasのz-indexを1に設定 */
+    }
+    #headerFrame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: auto; /* headerの高さに合わせて自動調整 */
+      border: none;
+      z-index: 2; /* header表示用iframeのz-indexを2に設定 */
+    }
+    #contentFrame {
+      position: absolute;
+      top: 0; /* headerFrameの高さ分下に配置する必要がある場合があります */
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      z-index: 0; /* コンテンツ表示用iframeのz-indexを0に設定 */
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="https://u.cubeupload.com/gazoulpv_vql/icon13.png" alt="lpv_vqlのアイコン">
+  <iframe id="headerFrame" srcdoc="
+    <!DOCTYPE html>
+    <html lang='ja'>
+    <head>
+      <meta charset='UTF-8'>
+      <style>
+        body {
+          margin: 0;
+          font-family: sans-serif;
+          background-color: transparent; /* 背景を透明に */
+          color: #fff;
+        }
+        header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 3rem;
+          background-color: #000;
+          z-index: 3; /* header自体のz-indexも念のため設定 */
+        }
+        .icon {
+          height: 60px;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+        .icon:hover {
+          transform: rotate(10deg) scale(1.05);
+        }
+        nav a {
+          color: white;
+          text-decoration: none;
+          margin-left: 1rem;
+          font-weight: bold;
+          transition: color 0.3s;
+        }
+        nav a:hover {
+          color: #0af;
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <img id='userIcon' src='https://u.cubeupload.com/gazoulpv_vql/icon13.png' alt='icon' class='icon'>
         <nav>
-            <a href="https://lpv-vql.github.io/lpv_vql-profile/">ホーム</a>
-            <a href="https://lpv-vql.github.io/lpv_vql-tool/">ツール</a>
+          <a href='https://lpv-vql.github.io/lpv_vql-profile/'>ホーム</a>
+          <a href='https://lpv-vql.github.io/lpv_vql-tool/'>ツール</a>
+          <a href='#'>作品一覧</a>
         </nav>
-    </header>
-    <main>
+      </header>
+    </body>
+    </html>
+  "></iframe>
+
+  <iframe id="contentFrame" srcdoc="
+    <!DOCTYPE html>
+    <html lang='ja'>
+    <head>
+      <meta charset='UTF-8'>
+      <style>
+        body {
+          margin: 0;
+          font-family: sans-serif;
+          background-color: #111;
+          color: #fff;
+        }
+        main {
+          padding: 2rem;
+          display: block;
+        }
+        section {
+          width: 60%;
+          text-align: left;
+          margin: 0 auto 2rem auto;
+          animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .accounts a {
+          color: white;
+          text-decoration: none;
+          display: block;
+          transition: color 0.3s;
+        }
+        .accounts a:hover {
+          color: #0af;
+        }
+        p {
+          line-height: 1;
+          white-space: pre-line;
+        }
+      </style>
+    </head>
+    <body>
+      <main>
         <section>
-            <h1>lpv_vqlのHP</h1>
-            <p>中2です。ゲームを作ったり、ロボットを作ったり、絵をかいたりしています。<br>
+          <h1>lpv_vql</h1>
+          <p>
+            中2です。ゲームを作ったり、ロボットを作ったり、絵をかいたりしています。<br>
             3DCAD(Autodesk Fusion)による設計が少しできます。<br>
             3Dが大好きです。魚派です。あとおでんが好きです。<br>
-            scratch大好き!</p>
+            scratch大好き!
+          </p>
         </section>
         <section>
-            <h2>さわったことある言語</h2>
-            <p>Python (scratchattachとか)<br>
-            C# (Unity)<br>
-            C++ (Arduino)<br>
-            HTML/CSS<br>
-            </p>
+          <h2>さわったことある言語</h2>
+          <ul>
+            <li>Python (scratchattachとか)</li>
+            <li>C# (Unity)</li>
+            <li>C++ (Arduino)</li>
+            <li>HTML/CSS</li>
+          </ul>
         </section>
         <section>
-            <h2>アカウント</h2>
-            <ul>
-                <li>Scratch: <a href="https://scratch.mit.edu/users/lpv_vql/">@lpv_vql</a>, <a href="https://scratch.mit.edu/users/Ougonhi_Hakuginhi/">@Ougonhi_Hakuginhi</a>, <a href="https://scratch.mit.edu/users/sub_pv/">@sub_pv</a></li>
-                <li>GitHub: <a href="https://github.com/lpv-vql/">@lpv-vql</a></li>
-                <li>YouTube: <a href="https://www.youtube.com/@lpv_vql">@lpv_vql</a></li>
-            </ul>
+          <h2>アカウント</h2>
+          <div class='accounts'>
+            <a href='https://scratch.mit.edu/users/lpv_vql/' target='_blank'>Scratch: @lpv_vql</a>
+            <a href='https://scratch.mit.edu/users/Ougonhi_Hakuginhi/' target='_blank'>Scratch: @Ougonhi_Hakuginhi</a>
+            <a href='https://scratch.mit.edu/users/sub_pv/' target='_blank'>Scratch: @sub_pv</a>
+            <a href='https://github.com/lpv-vql' target='_blank'>GitHub: @lpv-vql</a>
+            <a href='https://www.youtube.com/@lpv_vql' target='_blank'>YouTube: @lpv_vql</a>
+          </div>
         </section>
-    </main>
+      </main>
+    </body>
+    </html>
+  "></iframe>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const paddle = {
+      width: 150,
+      height: 15,
+      x: canvas.width / 2 - 100,
+      y: canvas.height - 30,
+      dx: 20
+    };
+
+    const ball = {
+      x: canvas.width / 2,
+      y: canvas.height - 45,
+      radius: 8,
+      dx: 4,
+      dy: -4
+    };
+
+    const brick = {
+      rowCount: 8,
+      columnCount: 7,
+      width: canvas.width / 8,
+      height: 65,
+      padding: 6,
+      offsetTop: 92,
+      offsetLeft: 4
+    };
+
+    let bricks = [];
+    for (let c = 0; c < brick.columnCount; c++) {
+      bricks[c] = [];
+      for (let r = 0; r < brick.rowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0, visible: true };
+      }
+    }
+
+    let explosions = [];
+
+    function drawPaddle() {
+      ctx.fillStyle = "#fff";
+      ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+    }
+
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function drawBricks() {
+      for (let c = 0; c < brick.columnCount; c++) {
+        for (let r = 0; r < brick.rowCount; r++) {
+          if (bricks[c][r].visible) {
+            const brickX = c * (brick.width + brick.padding) + brick.offsetLeft;
+            const brickY = r * (brick.height + brick.padding) + brick.offsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.fillStyle = "#FFA500";
+            ctx.fillRect(brickX, brickY, brick.width, brick.height);
+          }
+        }
+      }
+    }
+
+    function collisionDetection() {
+      for (let c = 0; c < brick.columnCount; c++) {
+        for (let r = 0; r < brick.rowCount; r++) {
+          const b = bricks[c][r];
+          if (b.visible) {
+            if (
+              ball.x > b.x &&
+              ball.x < b.x + brick.width &&
+              ball.y > b.y &&
+              ball.y < b.y + brick.height
+            ) {
+              ball.dy = -ball.dy;
+              b.visible = false;
+              explosions.push({ x: b.x + brick.width / 2, y: b.y + brick.height / 2, size: 20 });
+            }
+          }
+        }
+      }
+    }
+
+    function drawExplosions() {
+      ctx.fillStyle = "yellow";
+      for (let i = 0; i < explosions.length; i++) {
+        const explosion = explosions[i];
+        ctx.beginPath();
+        ctx.arc(explosion.x, explosion.y, explosion.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+        explosion.size -= 1;
+      }
+      explosions = explosions.filter(explosion => explosion.size > 0);
+    }
+
+    function movePaddle() {
+      paddle.x = mouseX - paddle.width / 2;
+      if (paddle.x < 0) paddle.x = 0;
+      if (paddle.x + paddle.width > canvas.width) paddle.x = canvas.width - paddle.width;
+    }
+
+    function moveBall() {
+      ball.x += ball.dx;
+      ball.y += ball.dy;
+      if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) ball.dx = -ball.dx;
+      if (ball.y - ball.radius < 0) ball.dy = -ball.dy;
+      if (ball.y + ball.radius > canvas.height) {
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height - 45;
+        ball.dy = -ball.dy;
+      }
+    }
+
+    function detectPaddleCollision() {
+      if (
+        ball.x > paddle.x &&
+        ball.x < paddle.x + paddle.width &&
+        ball.y + ball.radius > paddle.y
+      ) {
+        ball.dy = -ball.dy;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBall();
+      drawPaddle();
+      drawBricks();
+      drawExplosions();
+      moveBall();
+      movePaddle();
+      collisionDetection();
+      detectPaddleCollision();
+      requestAnimationFrame(draw);
+    }
+
+    let mouseX = 0;
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+    });
+
+    draw();
+
+    // headerFrameの高さをheader要素の高さに合わせる (必要に応じて)
+    window.addEventListener('load', () => {
+      const headerFrame = document.getElementById('headerFrame');
+      const headerDoc = headerFrame.contentDocument || headerFrame.contentWindow.document;
+      const headerElement = headerDoc.querySelector('header');
+      if (headerElement) {
+        headerFrame.style.height = headerElement.offsetHeight + 'px';
+        // contentFrameのtop位置を調整 (headerの高さ分下げる)
+        const contentFrame = document.getElementById('contentFrame');
+        contentFrame.style.top = headerElement.offsetHeight + 'px';
+        contentFrame.style.height = `calc(100vh - ${headerElement.offsetHeight}px)`;
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      const headerFrame = document.getElementById('headerFrame');
+      const headerDoc = headerFrame.contentDocument || headerFrame.contentWindow.document;
+      const headerElement = headerDoc.querySelector('header');
+      if (headerElement) {
+        headerFrame.style.height = headerElement.offsetHeight + 'px';
+        const contentFrame = document.getElementById('contentFrame');
+        contentFrame.style.top = headerElement.offsetHeight + 'px';
+        contentFrame.style.height = `calc(100vh - ${headerElement.offsetHeight}px)`;
+      }
+    });
+  </script>
 </body>
 </html>
