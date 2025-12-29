@@ -1,6 +1,6 @@
 const username = "lpv_vql";
 
-// ===== ユーザー基本情報 =====
+// ユーザー情報
 fetch(`https://scratchinfo.quuq.dev/api/v1/users/${username}/info?mode=all`)
   .then(r => r.json())
   .then(data => {
@@ -14,7 +14,7 @@ fetch(`https://scratchinfo.quuq.dev/api/v1/users/${username}/info?mode=all`)
     document.getElementById("projects").textContent = "エラー";
   });
 
-// ===== プロジェクト合計統計 =====
+// プロジェクト統計
 fetch(`https://scratchinfo.quuq.dev/api/v1/users/${username}/projectStats`)
   .then(r => r.json())
   .then(data => {
