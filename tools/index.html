@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ツール</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+  <h1>ツール</h1>
+  <ul>
+    <li>404</li>
+  </ul>
+</main>
+
+<script>
+fetch("/header.html")
+  .then(r => r.text())
+  .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
+</body>
+</html>
 
