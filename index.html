@@ -14,8 +14,10 @@
   <p>hello</p>
 </main>
 
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/stats.js"></script>
 <script>
-fetch("/header.html")
+fetch("../header.html")
   .then(r => r.text())
   .then(t => document.getElementById("header").innerHTML = t);
 </script>
