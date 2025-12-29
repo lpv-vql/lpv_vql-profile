@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>lpv_vqlのサイト</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+  <h1>lpv_vql</h1>
+  <p>Scratch・自作言語・3Dプログラミングをやっています。</p>
+  <p>このサイトでは自分の活動やツールをまとめています。</p>
+</main>
+
+<script>
+fetch("/header.html")
+  .then(r => r.text())
+  .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
+</body>
+</html>
 
