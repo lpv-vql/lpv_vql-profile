@@ -14,7 +14,6 @@ nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* ナビリンク */
 nav a {
     color: black;
     text-decoration: none;
@@ -26,7 +25,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* メインコンテンツ */
+/* メイン */
 main {
     max-width: 900px;
     margin: 40px auto;
@@ -38,10 +37,13 @@ h1, h2 {
     font-weight: 600;
 }
 
-/* ホーム全体 */
-.home {
-    max-width: 900px;
-    margin: 40px auto;
+/* カード共通 */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 /* プロフィール */
@@ -51,34 +53,30 @@ h1, h2 {
     gap: 20px;
 }
 
-.profile img {
-    width: 100px;   /* アイコン少し大きめ */
+.profile img.profile-icon {
+    width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.profile a {
-    font-size: 1.8em;  /* 名前大きめ */
+.profile-info a {
+    font-size: 1.8em;
     font-weight: bold;
     color: black;
     text-decoration: none;
 }
 
-.profile a:hover {
+.profile-info a:hover {
     text-decoration: underline;
 }
 
 .bio {
     margin-top: 10px;
-    font-size: 1.1em;  /* 自己紹介大きめ */
+    font-size: 1.1em;
     color: #555;
 }
 
 /* おすすめ作品 */
-.recommended {
-    margin-top: 30px;
-}
-
 .recommended h2 {
     margin-bottom: 10px;
 }
@@ -101,29 +99,8 @@ h1, h2 {
     transform: scale(1.05);
 }
 
-/* もっと見る */
-.recommended .more,
-.summary-card .more {
-    display: block;
-    text-align: right;
-    margin-top: 5px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.recommended .more:hover,
-.summary-card .more:hover {
-    text-decoration: underline;
-}
-
 /* 簡易統計カード */
 .summary-card {
-    margin-top: 30px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,5 +123,19 @@ h1, h2 {
 .summary span {
     font-size: 0.85em;
     color: #666;
+}
+
+/* もっと見る */
+.more {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.more:hover {
+    text-decoration: underline;
 }
 
