@@ -1,4 +1,4 @@
-/* 全体 */
+/* ===== 全体 ===== */
 body {
     background-color: #ffffff;
     color: #222222;
@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* ヘッダー */
+/* ===== ヘッダー ===== */
 nav {
     background-color: #f9f9f9;
     padding: 15px 30px;
@@ -25,28 +25,35 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* メイン */
+/* ===== メイン ===== */
 main {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* 見出し */
+/* ===== 見出し ===== */
 h1, h2 {
     font-weight: 600;
+    color: #222;
 }
 
-/* カード共通 */
+/* ===== カード共通 ===== */
 .card {
     background: white;
     border-radius: 12px;
-    padding: 20px;
+    padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* プロフィール */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ===== プロフィール ===== */
 .profile {
     display: flex;
     align-items: center;
@@ -76,7 +83,7 @@ h1, h2 {
     color: #555;
 }
 
-/* おすすめ作品 */
+/* ===== おすすめ作品 ===== */
 .recommended h2 {
     margin-bottom: 10px;
 }
@@ -99,16 +106,18 @@ h1, h2 {
     transform: scale(1.05);
 }
 
-/* 簡易統計カード */
+/* ===== 簡易統計カード ===== */
 .summary-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .summary {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .summary div {
@@ -125,7 +134,37 @@ h1, h2 {
     color: #666;
 }
 
-/* もっと見る */
+/* ===== 統計ページ（Scratch stats） ===== */
+.stats {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.stats li {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 0.95em;
+    transition: background 0.2s;
+}
+
+.stats li:hover {
+    background: #f0f0f0;
+}
+
+.stats li span {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #222;
+    margin-top: 5px;
+}
+
+/* ===== もっと見る ===== */
 .more {
     display: block;
     text-align: right;
@@ -139,3 +178,16 @@ h1, h2 {
     text-decoration: underline;
 }
 
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 500px) {
+    .summary-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .summary {
+        gap: 15px;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
