@@ -41,10 +41,10 @@ h1, h2, h3 {
 /* ===== カード共通 ===== */
 .card {
     background: white;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
