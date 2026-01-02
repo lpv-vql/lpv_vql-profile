@@ -255,7 +255,6 @@ h1, h2 {
   line-height: 1.6;
 }
 
-
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 500px) {
     .summary-card {
