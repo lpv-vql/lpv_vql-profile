@@ -1,68 +1,33 @@
 const user = "lpv_vql";
 
-// --- ユーザー基本情報取得 ---
+/* ===== ユーザー情報 ===== */
 fetch(`https://scratchinfo.quuq.dev/api/v1/users/${user}/info?mode=all`)
-  .then(res => res.json())
-  .then(data => {
+  .then(r => r.json())
+  .then(d => {
 
-    /* ===== ホームページ 用 ===== */
-    if (document.getElementById("home-followers")) {
-        // ホーム用フォロワー表示
-        document.getElementById("home-followers").textContent = data.followers;
-    }
+    // アイコン
+    const icon = document.getElementById("icon");
+    if (icon) icon.src = d.profilePicture;
 
-    /* ===== 統計ページ 用 ===== */
-    if (document.getElementById("followers")) {
+    // ユーザー名リンク
+    const name = document.getElementById("username");
+    if (name) name.href = `https://scratch.mit.edu/users/${user}/`;
 
-        // 統計ページの基本統計
-        document.getElementById("followers").textContent = data.followers;
-        document.getElementById("following").textContent = data.following;
-        document.getElementById("projects").textContent = data.projectsShared;
-
-        // 参加日（後ろの時刻は切って表示）
-        document.getElementById("join").textContent =
-            data.joinDate.split(",")[0];
-    }
-  })
-  .catch(error => {
-    console.error("ユーザー情報の取得に失敗:", error);
+    // ホーム：フォロワー
+    const hf = document.getElementById("home-followers");
+    if (hf) hf.textContent = d.followers;
   });
 
-// --- 作品統計取得 ---
+/* ===== プロジェクト統計 ===== */
 fetch(`https://scratchinfo.quuq.dev/api/v1/users/${user}/projectStats`)
-  .then(res => res.json())
-  .then(data => {
+  .then(r => r.json())
+  .then(d => {
 
-    /* ===== ホームページ 用 ===== */
-    if (document.getElementById("home-views")) {
-        document.getElementById("home-views").textContent = data.totalViews;
-        document.getElementById("home-loves").textContent = data.totalLoves;
-        document.getElementById("home-faves").textContent = data.totalFaves;
-    }
+    const v = document.getElementById("home-views");
+    const l = document.getElementById("home-loves");
+    const f = document.getElementById("home-faves");
 
-    /* ===== 統計ページ 用 ===== */
-    if (document.getElementById("totalViews")) {
-        // 合計値
-        document.getElementById("totalViews").textContent = data.totalViews;
-        document.getElementById("totalLoves").textContent = data.totalLoves;
-        document.getElementById("totalFavorites").textContent = data.totalFaves;
-
-        // 平均値
-        document.getElementById("avgViews").textContent =
-            data.averageStats.averageViews;
-        document.getElementById("avgLoves").textContent =
-            data.averageStats.averageLoves ?? "-";
-        document.getElementById("avgFaves").textContent =
-            data.averageStats.averageFaves ?? "-";
-
-        // 比率
-        document.getElementById("lvRatio").textContent =
-            data.loveToViewRatio.toFixed(2);
-        document.getElementById("fvRatio").textContent =
-            data.faveToViewRatio.toFixed(2);
-    }
-  })
-  .catch(error => {
-    console.error("プロジェクト統計の取得に失敗:", error);
+    if (v) v.textContent = d.totalViews;
+    if (l) l.textContent = d.totalLoves;
+    if (f) f.textContent = d.totalFaves;
   });
-
