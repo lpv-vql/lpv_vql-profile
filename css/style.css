@@ -33,33 +33,9 @@ main {
     padding: 0 20px;
 }
 
-/* 統計カード */
-.card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
 /* 見出し */
 h1, h2 {
     font-weight: 600;
-}
-
-/* 統計リスト */
-ul.stats {
-    list-style: none;
-    padding: 0;
-}
-
-ul.stats li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-}
-
-ul.stats li:last-child {
-    border-bottom: none;
 }
 
 /* ホーム全体 */
@@ -76,13 +52,13 @@ ul.stats li:last-child {
 }
 
 .profile img {
-    width: 80px;
-    height: 80px;
+    width: 100px;   /* アイコン少し大きめ */
+    height: 100px;
     border-radius: 50%;
 }
 
 .profile a {
-    font-size: 1.6em;
+    font-size: 1.8em;  /* 名前大きめ */
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -93,8 +69,52 @@ ul.stats li:last-child {
 }
 
 .bio {
-    margin-top: 8px;
+    margin-top: 10px;
+    font-size: 1.1em;  /* 自己紹介大きめ */
     color: #555;
+}
+
+/* おすすめ作品 */
+.recommended {
+    margin-top: 30px;
+}
+
+.recommended h2 {
+    margin-bottom: 10px;
+}
+
+.recommended-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.project-thumb img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.project-thumb:hover img {
+    transform: scale(1.05);
+}
+
+/* もっと見る */
+.recommended .more,
+.summary-card .more {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recommended .more:hover,
+.summary-card .more:hover {
+    text-decoration: underline;
 }
 
 /* 簡易統計カード */
@@ -128,13 +148,3 @@ ul.stats li:last-child {
     color: #666;
 }
 
-/* もっと見る */
-.more {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.more:hover {
-    text-decoration: underline;
-}
