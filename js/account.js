@@ -26,49 +26,40 @@ const accountContainer = document.getElementById("account-list");
 
 if (accountContainer) {
   Object.keys(accountsBySite).forEach(site => {
-    const siteDiv = document.createElement("div");
-    siteDiv.style.marginBottom = "15px";
+    // カード本体
+    const card = document.createElement("div");
+    card.className = "account-card";
 
-    const siteHeader = document.createElement("div");
-    siteHeader.style.display = "flex";
-    siteHeader.style.alignItems = "center";
-    siteHeader.style.gap = "5px";
+    // ヘッダー（ファビコン＋サイト名）
+    const header = document.createElement("div");
+    header.className = "account-card-header";
 
     const favicon = document.createElement("img");
     favicon.src = siteFavicons[site];
     favicon.alt = site + " icon";
-    favicon.style.width = "20px";
-    favicon.style.height = "20px";
+    favicon.className = "account-card-favicon";
 
-    const siteTitle = document.createElement("h3");
-    siteTitle.textContent = site;
-    siteTitle.style.margin = "0";
+    const title = document.createElement("span");
+    title.textContent = site;
+    title.className = "account-card-title";
 
-    siteHeader.appendChild(favicon);
-    siteHeader.appendChild(siteTitle);
-    siteDiv.appendChild(siteHeader);
-    accountContainer.appendChild(siteDiv);
+    header.appendChild(favicon);
+    header.appendChild(title);
+    card.appendChild(header);
 
-    const siteList = document.createElement("div");
-    siteList.style.marginLeft = "28px";
-    siteList.style.display = "block";
+    // アカウントリンク
+    const list = document.createElement("div");
+    list.className = "account-card-list";
     accountsBySite[site].forEach(acc => {
       const a = document.createElement("a");
       a.href = acc.link;
       a.target = "_blank";
       a.textContent = acc.name;
-      a.style.display = "block";
-      a.style.marginBottom = "4px";
-      a.style.color = "black";
-      a.style.textDecoration = "none";
-      a.style.fontWeight = "bold";
-
-      a.onmouseover = () => a.style.textDecoration = "underline";
-      a.onmouseout = () => a.style.textDecoration = "none";
-
-      siteList.appendChild(a);
+      a.className = "account-link";
+      list.appendChild(a);
     });
 
-    accountContainer.appendChild(siteList);
+    card.appendChild(list);
+    accountContainer.appendChild(card);
   });
 }
