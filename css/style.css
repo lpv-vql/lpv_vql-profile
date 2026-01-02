@@ -61,6 +61,17 @@ h1, h2, h3 {
     padding-bottom: 5px;
 }
 
+/* サイト名とファビコン */
+#account-list h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 .account-item {
     display: flex;
     flex-direction: column;
