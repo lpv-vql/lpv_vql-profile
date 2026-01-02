@@ -1,8 +1,8 @@
 const accountsBySite = {
   "Scratch": [
     { name: "lpv_vql", link: "https://scratch.mit.edu/users/lpv_vql/", icon: "https://cdn2.scratch.mit.edu/get_image/user/139189676_60x60.png" },
-    { name: "Ougonhi_Hakuginhi", link: "https://scratch.mit.edu/users/Ougonhi_Hakuginhi/", icon: "https://cdn2.scratch.mit.edu/get_image/user/your_icon_id_60x60.png" },
-    { name: "sub_pv", link: "https://scratch.mit.edu/users/sub_pv/", icon: "https://cdn2.scratch.mit.edu/get_image/user/your_icon_id_60x60.png" }
+    { name: "Ougonhi_Hakuginhi", link: "https://scratch.mit.edu/users/Ougonhi_Hakuginhi/", icon: "https://cdn2.scratch.mit.edu/get_image/user/141962855_60x60.png" },
+    { name: "sub_pv", link: "https://scratch.mit.edu/users/sub_pv/", icon: "https://cdn2.scratch.mit.edu/get_image/user/142051866_60x60.png" }
   ],
   "Japanese Scratch-Wiki": [
     { name: "Lpv vql", link: "https://ja.scratch-wiki.info/wiki/利用者:Lpv_vql", icon: "https://cdn2.scratch.mit.edu/get_image/user/139189676_60x60.png" }
