@@ -54,51 +54,46 @@ h1, h2 {
 }
 
 /* ===== アカウント ===== */
-.account-list {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 5px;
+.account-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* サイト名とファビコン */
-#account-list h3 {
-    font-size: 1.1em;
+.account-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.account-card-favicon {
+    width: 20px;
+    height: 20px;
+}
+
+.account-card-title {
     font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
-.account-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 100px;
-    transition: transform 0.2s;
+/* カード内アカウントリンク */
+.account-card-list {
+    display: block;
+    margin-left: 28px;
 }
 
-.account-item:hover {
-    transform: scale(1.05);
-}
-
-.account-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 5px;
-}
-
-.account-item a {
+.account-link {
+    display: block;
+    margin-bottom: 4px;
     color: black;
     text-decoration: none;
     font-weight: bold;
 }
 
-.account-item a:hover {
+.account-link:hover {
     text-decoration: underline;
 }
 
