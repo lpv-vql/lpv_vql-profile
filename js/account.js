@@ -17,7 +17,7 @@ const accountsBySite = {
 
 const siteFavicons = {
   "Scratch": "https://scratch.mit.edu/favicon.ico",
-  "Japanese-Scratch Wiki": "https://ja.scratch-wiki.info/favicon.ico",
+  "Japanese Scratch-Wiki": "https://ja.scratch-wiki.info/favicon.ico",
   "YouTube": "https://favicon.im/youtube.com",
   "GitHub": "https://github.githubassets.com/favicons/favicon.svg"
 };
