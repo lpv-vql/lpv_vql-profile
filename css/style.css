@@ -53,6 +53,44 @@ h1, h2, h3 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
+/* ===== アカウント ===== */
+.account-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.account-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 100px;
+    transition: transform 0.2s;
+}
+
+.account-item:hover {
+    transform: scale(1.05);
+}
+
+.account-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.account-item a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.account-item a:hover {
+    text-decoration: underline;
+}
+
 /* ===== プロフィール ===== */
 .profile {
     display: flex;
