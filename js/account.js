@@ -15,11 +15,10 @@ const accountsBySite = {
   ]
 };
 
-// サイトごとのファビコン
 const siteFavicons = {
   "Scratch": "https://scratch.mit.edu/favicon.ico",
   "Japanese-Scratch Wiki": "https://ja.scratch-wiki.info/favicon.ico",
-  "YouTube": "https://www.youtube.com/s/desktop/f4f4cfe4/img/favicon_32.png",
+  "YouTube": "https://favicon.im/youtube.com",
   "GitHub": "https://github.githubassets.com/favicons/favicon.svg"
 };
 
@@ -27,12 +26,13 @@ const accountContainer = document.getElementById("account-list");
 
 if (accountContainer) {
   Object.keys(accountsBySite).forEach(site => {
-    // サイト名 + ファビコン
     const siteDiv = document.createElement("div");
     siteDiv.style.marginBottom = "15px";
-    siteDiv.style.display = "flex";
-    siteDiv.style.alignItems = "center";
-    siteDiv.style.gap = "8px";
+
+    const siteHeader = document.createElement("div");
+    siteHeader.style.display = "flex";
+    siteHeader.style.alignItems = "center";
+    siteHeader.style.gap = "5px";
 
     const favicon = document.createElement("img");
     favicon.src = siteFavicons[site];
@@ -44,13 +44,14 @@ if (accountContainer) {
     siteTitle.textContent = site;
     siteTitle.style.margin = "0";
 
-    siteDiv.appendChild(favicon);
-    siteDiv.appendChild(siteTitle);
+    siteHeader.appendChild(favicon);
+    siteHeader.appendChild(siteTitle);
+    siteDiv.appendChild(siteHeader);
     accountContainer.appendChild(siteDiv);
 
-    // サイト内アカウント一覧（縦表示）
     const siteList = document.createElement("div");
-    siteList.style.marginLeft = "28px"; // ファビコン分少しずらす
+    siteList.style.marginLeft = "28px";
+    siteList.style.display = "block";
     accountsBySite[site].forEach(acc => {
       const a = document.createElement("a");
       a.href = acc.link;
