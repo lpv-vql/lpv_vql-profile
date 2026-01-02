@@ -177,7 +177,7 @@ h1, h2 {
     color: #666;
 }
 
-/* ===== 統計ページ（Scratch stats） ===== */
+/* ===== 統計ページ ===== */
 .stats {
     list-style: none;
     padding: 0;
@@ -220,6 +220,41 @@ h1, h2 {
 .more:hover {
     text-decoration: underline;
 }
+
+/* ===== ツール ===== */
+.tools {
+  margin-top: 40px;
+}
+
+.tools h1 {
+  margin-bottom: 16px;
+}
+
+.tool-card {
+  margin-bottom: 16px;
+}
+
+.tool-title {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+}
+
+.tool-title a {
+  color: #111;
+  text-decoration: none;
+}
+
+.tool-title a:hover {
+  text-decoration: underline;
+}
+
+.tool-desc {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 500px) {
