@@ -61,3 +61,80 @@ ul.stats li {
 ul.stats li:last-child {
     border-bottom: none;
 }
+
+/* ホーム全体 */
+.home {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* プロフィール */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.profile a {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.profile a:hover {
+    text-decoration: underline;
+}
+
+.bio {
+    margin-top: 8px;
+    color: #555;
+}
+
+/* 簡易統計カード */
+.summary-card {
+    margin-top: 30px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary {
+    display: flex;
+    gap: 30px;
+}
+
+.summary div {
+    text-align: center;
+}
+
+.summary strong {
+    font-size: 1.4em;
+    display: block;
+}
+
+.summary span {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* もっと見る */
+.more {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.more:hover {
+    text-decoration: underline;
+}
