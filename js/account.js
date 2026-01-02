@@ -4,7 +4,7 @@ const accountsBySite = {
     { name: "Ougonhi_Hakuginhi", link: "https://scratch.mit.edu/users/Ougonhi_Hakuginhi/" },
     { name: "sub_pv", link: "https://scratch.mit.edu/users/sub_pv/" }
   ],
-  "Japanese-Scratch Wiki": [
+  "Japanese Scratch-Wiki": [
     { name: "Lpv vql", link: "https://ja.scratch-wiki.info/wiki/利用者:Lpv_vql" }
   ],
   "YouTube": [
