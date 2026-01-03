@@ -40,6 +40,9 @@ nav {
     background-color: var(--bg-soft);
     padding: 15px 30px;
     box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
