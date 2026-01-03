@@ -66,8 +66,11 @@
 <script src="js/account.js"></script>
 <script src="js/tools.js"></script>
 <script>
-  renderTools("home-tool-list", 3);
+document.addEventListener("DOMContentLoaded", () => {
+  renderTools("home-tool-list", "home");
+});
 </script>
+
 
 <script src="js/stats.js"></script>
 <script>
