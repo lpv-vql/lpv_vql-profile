@@ -10,18 +10,19 @@
 <div id="header"></div>
 
 <main>
-
 <section class="tools">
   <h1>ツール</h1>
   <div id="tool-list"></div>
 </section>
-
 </main>
 
 <script src="../js/tools.js"></script>
 <script>
-  renderTools("tool-list");
+  document.addEventListener("DOMContentLoaded", () => {
+    renderTools("tool-list");
+  });
 </script>
+
 
 </body>
 </html>
