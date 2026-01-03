@@ -152,22 +152,28 @@ h1, h2 {
 /* ===== ホームのツール ===== */
 .home-tools {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 
 .home-tools .tool-card {
-  width: auto;
   flex: 1 1 0;
   margin-bottom: 0;
+  padding: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-tools .tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
 .home-tools .tool-title {
-  font-size: 1.1em;
   margin: 0;
+  font-size: 1.15em;
 }
 
 .home-tools .tool-title a {
-  color: black;
+  color: #000;
   text-decoration: none;
   font-weight: 600;
 }
@@ -176,6 +182,9 @@ h1, h2 {
   text-decoration: underline;
 }
 
+.home-tools .tool-desc {
+  display: none;
+}
 
 /* ===== 簡易統計カード ===== */
 .summary-card {
