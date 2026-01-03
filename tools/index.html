@@ -23,6 +23,11 @@
     renderTools("tool-list");
   });
 </script>
+<script>
+fetch("../header.html")
+  .then(r => r.text())
+  .then(t => document.getElementById("header").innerHTML = t);
+</script>
 
 </body>
 </html>
