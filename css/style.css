@@ -1,21 +1,49 @@
-/* ===== 全体 ===== */
+/* ===== Variables (定数) ===== */
+:root {
+    --bg-color: #ffffff;
+    --bg-soft: #f9f9f9;
+    --bg-hover: #f0f0f0;
+    --text-main: #222222;
+    --text-muted: #555555;
+    --text-light: #666666;
+    --accent-color: #000000;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-md: 0 6px 20px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+    --radius: 10px;
+    --transition: 0.2s;
+}
+
+/* ===== Global Styles ===== */
 body {
-    background-color: #ffffff;
-    color: #222222;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
 }
 
-/* ===== ヘッダー ===== */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* ===== Navigation ===== */
 nav {
-    background-color: #f9f9f9;
+    background-color: var(--bg-soft);
     padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 nav a {
-    color: black;
+    color: var(--accent-color);
     text-decoration: none;
     margin-right: 20px;
     font-weight: bold;
@@ -25,44 +53,32 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ===== メイン ===== */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* ===== 見出し ===== */
-h1, h2 {
-    font-weight: 600;
-    color: #222;
-}
-
-/* ===== カード共通 ===== */
+/* ===== Cards (Common) ===== */
 .card {
     background: white;
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    box-shadow: var(--shadow-lg);
 }
 
-/* ===== アカウント ===== */
+/* ===== Account Card ===== */
 .account-card {
-    background: #f9f9f9;
-    border-radius: 10px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
     padding: 15px 20px;
     margin-bottom: 15px;
+    transition: background var(--transition);
 }
 
 .account-card:hover {
-  background: #f0f0f0;
+    background: var(--bg-hover);
 }
 
 .account-card-header {
@@ -90,7 +106,7 @@ h1, h2 {
 .account-link {
     display: block;
     margin-bottom: 4px;
-    color: black;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -99,7 +115,7 @@ h1, h2 {
     text-decoration: underline;
 }
 
-/* ===== プロフィール ===== */
+/* ===== Profile Section ===== */
 .profile {
     display: flex;
     align-items: center;
@@ -115,7 +131,7 @@ h1, h2 {
 .profile-info a {
     font-size: 1.8em;
     font-weight: bold;
-    color: black;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -126,10 +142,10 @@ h1, h2 {
 .bio {
     margin-top: 10px;
     font-size: 1.1em;
-    color: #555;
+    color: var(--text-muted);
 }
 
-/* ===== おすすめ作品 ===== */
+/* ===== Recommended Works ===== */
 .recommended h2 {
     margin-bottom: 10px;
 }
@@ -145,55 +161,55 @@ h1, h2 {
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.2s;
+    transition: transform var(--transition);
 }
 
 .project-thumb:hover img {
     transform: scale(1.05);
 }
 
-/* ===== ホームのツール ===== */
+/* ===== Home Tools & Summary ===== */
 .home-tools {
-  display: flex;
-  gap: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 .home-tools .tool-card {
-  flex: 1 1 0;
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 15px 10px;
-  text-align: center;
-  margin-bottom: 0;
-  transition: background 0.2s;
-  box-shadow: none;
-  transform: none; 
+    flex: 1 1 0;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 15px 10px;
+    text-align: center;
+    margin-bottom: 0;
+    box-shadow: none;
+    transform: none;
+    transition: background var(--transition);
 }
 
 .home-tools .tool-card:hover {
-  background: #f0f0f0;
+    background: var(--bg-hover);
 }
 
 .home-tools .tool-title {
-  margin: 0;
-  font-size: 1.1em;
-  font-weight: bold;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .home-tools .tool-title a {
-  color: #222;
-  text-decoration: none;
+    color: var(--text-main);
+    text-decoration: none;
 }
 
 .home-tools .tool-title a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .home-tools .tool-desc {
-  display: none;
+    display: none;
 }
 
-/* ===== ホームの統計 ===== */
+/* Summary */
 .summary-card {
     display: flex;
     justify-content: space-between;
@@ -218,10 +234,10 @@ h1, h2 {
 
 .summary span {
     font-size: 0.85em;
-    color: #666;
+    color: var(--text-light);
 }
 
-/* ===== 統計 ===== */
+/* Stats List */
 .stats {
     list-style: none;
     padding: 0;
@@ -231,32 +247,32 @@ h1, h2 {
 }
 
 .stats li {
-    background: #f9f9f9;
-    border-radius: 10px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
     padding: 15px 10px;
     text-align: center;
     font-size: 0.95em;
-    transition: background 0.2s;
+    transition: background var(--transition);
 }
 
 .stats li:hover {
-    background: #f0f0f0;
+    background: var(--bg-hover);
 }
 
 .stats li span {
     display: block;
     font-size: 1.4em;
     font-weight: bold;
-    color: #222;
+    color: var(--text-main);
     margin-top: 5px;
 }
 
-/* ===== もっと見る ===== */
+/* More Link */
 .more {
     display: block;
     text-align: right;
     margin-top: 5px;
-    color: black;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -265,41 +281,41 @@ h1, h2 {
     text-decoration: underline;
 }
 
-/* ===== ツール ===== */
+/* ===== Tool Page Styles ===== */
 .tools {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .tools h1 {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .tool-card {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .tool-title {
-  margin: 0 0 6px 0;
-  font-size: 1.1rem;
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
 }
 
 .tool-title a {
-  color: #111;
-  text-decoration: none;
+    color: #111;
+    text-decoration: none;
 }
 
 .tool-title a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .tool-desc {
-  margin: 0;
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.6;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* ===== レスポンシブ対応 ===== */
+/* ===== Responsive ===== */
 @media (max-width: 500px) {
     .summary-card {
         flex-direction: column;
