@@ -1,4 +1,4 @@
-function renderTools(targetId, limit = null) {
+function renderTools(targetId, mode = "page") {
   const tools = [
     {
       title: "scratch-text-costume",
@@ -32,7 +32,11 @@ function renderTools(targetId, limit = null) {
 
   container.innerHTML = "";
 
-  const list = limit ? tools.slice(0, limit) : tools;
+  const isHome = mode === "home";
+  const list = isHome ? tools.slice(0, 3) : tools;
+
+  container.classList.toggle("home-tools", isHome);
+  container.classList.toggle("tools-page", !isHome);
 
   list.forEach(tool => {
     const card = document.createElement("div");
@@ -42,7 +46,7 @@ function renderTools(targetId, limit = null) {
       <h2 class="tool-title">
         <a href="${tool.url}" target="_blank">${tool.title}</a>
       </h2>
-      <p class="tool-desc">${tool.desc}</p>
+      ${isHome ? "" : `<p class="tool-desc">${tool.desc}</p>`}
     `;
 
     container.appendChild(card);
