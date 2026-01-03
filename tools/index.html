@@ -26,9 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-fetch("../header.html")
-  .then(r => r.text())
-  .then(t => document.getElementById("header").innerHTML = t);
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("../header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    });
+  fetch("../footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+});
 </script>
 
 </body>
