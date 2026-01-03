@@ -53,6 +53,15 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* ===== footer ===== */
+.site-footer {
+  text-align: center;
+  font-size: 0.75em;
+  color: #888;
+  padding: 30px 10px 20px;
+}
+
+
 /* ===== Cards (Common) ===== */
 .card {
     background: white;
