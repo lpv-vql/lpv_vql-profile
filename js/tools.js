@@ -1,48 +1,51 @@
-const tools = [
-  {
-    title: "scratch-text-costume",
-    url: "https://lpv-vql.github.io/scratch-text-costume/",
-    desc: "Scratchのコスチュームに文字を自動で設定"
-  },
-  {
-    title: "scratch-save",
-    url: "https://lpv-vql.github.io/scratch-save/",
-    desc: "Scratchの作品のセーブコードを保存"
-  },
-  {
-    title: "あまり短くならない短縮URL",
-    url: "https://scratch.mit.edu/projects/1146420418/",
-    desc: "Scratchの作品URLを少し短縮"
-  },
-  {
-    title: "Transparentch",
-    url: "https://lpv-vql.github.io/Transparentch/",
-    desc: "コスチュームの透明度を変更"
-  },
-  {
-    title: "Fontch",
-    url: "https://lpv-vql.github.io/Fontch/",
-    desc: "Scratchで外部フォントを使用"
-  }
-];
+function renderTools(targetId, limit = null) {
+  const tools = [
+    {
+      title: "scratch-text-costume",
+      url: "https://lpv-vql.github.io/scratch-text-costume/",
+      desc: "Scratchのコスチュームに文字を自動で設定します。"
+    },
+    {
+      title: "scratch-save",
+      url: "https://lpv-vql.github.io/scratch-save/",
+      desc: "Scratchの作品のセーブコードを簡単に保存できます。"
+    },
+    {
+      title: "あまり短くならない短縮URL",
+      url: "https://scratch.mit.edu/projects/1146420418/",
+      desc: "Scratchの作品URLを少し短くします。"
+    },
+    {
+      title: "Transparentch",
+      url: "https://lpv-vql.github.io/Transparentch/",
+      desc: "コスチュームの透明度を変更できます。"
+    },
+    {
+      title: "Fontch",
+      url: "https://lpv-vql.github.io/Fontch/",
+      desc: "Scratchで他のフォントを使えるようにします。"
+    }
+  ];
 
-function renderHomeTools(limit = 3) {
-  const container = document.getElementById("home-tool-list");
+  const container = document.getElementById(targetId);
   if (!container) return;
 
-  tools.slice(0, limit).forEach(tool => {
+  container.innerHTML = "";
+
+  const list = limit ? tools.slice(0, limit) : tools;
+
+  list.forEach(tool => {
     const card = document.createElement("div");
     card.className = "card tool-card";
 
     card.innerHTML = `
-      <h3 class="tool-title">
+      <h2 class="tool-title">
         <a href="${tool.url}" target="_blank">${tool.title}</a>
-      </h3>
+      </h2>
+      <p class="tool-desc">${tool.desc}</p>
     `;
 
     container.appendChild(card);
   });
 }
-
-renderHomeTools(3);
 
