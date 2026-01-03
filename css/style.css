@@ -53,14 +53,14 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.site-nav {
+/* ===== header ===== */
+.site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
     background: var(--bg-soft);
-    padding: 15px 30px;
-    border-bottom: 1px solid #e0e0e0;
 }
+
 
 /* ===== footer ===== */
 .site-footer {
