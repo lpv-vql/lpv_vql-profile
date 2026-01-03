@@ -78,7 +78,6 @@ h1, h2 {
     font-size: 1.2em;
 }
 
-/* カード内アカウントリンク */
 .account-card-list {
     display: block;
     margin-left: 28px;
@@ -173,7 +172,7 @@ h1, h2 {
 
 .home-tools .tool-title {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
 }
 
