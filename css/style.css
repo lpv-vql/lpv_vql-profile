@@ -163,7 +163,7 @@ h1, h2 {
 .home-tools .tool-desc {
   display: none;
 }
-/* ===== 統計 ===== */
+/* ===== ホームの統計 ===== */
 .summary-card {
     display: flex;
     justify-content: space-between;
@@ -191,7 +191,7 @@ h1, h2 {
     color: #666;
 }
 
-/* ===== 統計ページ ===== */
+/* ===== 統計 ===== */
 .stats {
     list-style: none;
     padding: 0;
