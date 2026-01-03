@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  fetch("/lpv_vql-profile/header.html")
+  fetch("/header.html")
     .then(r => r.text())
-    .then(t => {
-      const h = document.getElementById("header");
-      if (h) h.innerHTML = t;
+    .then(html => {
+      const header = document.getElementById("header");
+      if (header) header.innerHTML = html;
     });
 
-  fetch("/lpv_vql-profile/footer.html")
+  fetch("/footer.html")
     .then(r => r.text())
-    .then(t => {
-      const f = document.getElementById("footer");
-      if (f) f.innerHTML = t;
+    .then(html => {
+      const footer = document.getElementById("footer");
+      if (footer) footer.innerHTML = html;
     });
 
 });
