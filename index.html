@@ -71,11 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script src="js/stats.js"></script>
-<script>
 fetch("header.html")
-  .then(r => r.text())
-  .then(t => document.getElementById("header").innerHTML = t);
-</script>
+fetch("footer.html")
 
 </body>
 </html>
