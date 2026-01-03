@@ -153,14 +153,12 @@ h1, h2 {
 .home-tools {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
 }
 
-.home-tools .tool-card {
-  flex: 1 1 30%;
-  min-width: 180px;
-  padding: 15px;
-  text-align: center;
+.home-tools .card {
+  width: auto;
+  flex: 1 1 0;
+  margin-bottom: 0;
 }
 
 .home-tools .tool-title {
