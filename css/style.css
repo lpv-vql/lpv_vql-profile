@@ -163,6 +163,8 @@ h1, h2 {
   text-align: center;
   margin-bottom: 0;
   transition: background 0.2s;
+  box-shadow: none;
+  transform: none; 
 }
 
 .home-tools .tool-card:hover {
@@ -171,7 +173,7 @@ h1, h2 {
 
 .home-tools .tool-title {
   margin: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
