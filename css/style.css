@@ -152,17 +152,43 @@ h1, h2 {
 /* ===== ホームのツール ===== */
 .home-tools {
   display: flex;
-  gap: 16px;
+  gap: 15px;
 }
 
 .home-tools .tool-card {
   flex: 1 1 0;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px 10px;
+  text-align: center;
   margin-bottom: 0;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+
+.home-tools .tool-card:hover {
+  background: #f0f0f0;
+}
+
+.home-tools .tool-title {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.home-tools .tool-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.home-tools .tool-title a:hover {
+  text-decoration: underline;
 }
 
 .home-tools .tool-desc {
   display: none;
 }
+
 /* ===== ホームの統計 ===== */
 .summary-card {
     display: flex;
