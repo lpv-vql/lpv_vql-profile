@@ -103,9 +103,11 @@ header nav a:hover {
     margin-bottom: 8px;
 }
 
-.account-card-favicon {
-    width: 20px;
-    height: 20px;
+.account-card-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .account-card-title {
