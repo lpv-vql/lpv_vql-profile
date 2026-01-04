@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ツール</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+  <h1>作品検索</h1>
+
+  <div class="card">
+    <input id="search" type="text" placeholder="作品名で検索">
+    <select id="sort">
+      <option value="views">参照数</option>
+      <option value="loves">好き数</option>
+      <option value="faves">お気に入り</option>
+      <option value="time">新しい順</option>
+    </select>
+  </div>
+
+  <div id="project-list" class="project-grid"></div>
+</main>
+
+<div id="footer"></div>
+
+<script src="../js/projects.js"></script>
+<script src="../js/common.js"></script>
+
+</body>
+</html>
