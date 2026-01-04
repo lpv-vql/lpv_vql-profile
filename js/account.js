@@ -16,9 +16,9 @@ const accountsBySite = {
 };
 
 const siteColors = {
-  "Scratch": "#4D97FF",
-  "Japanese Scratch-Wiki": "#4D97FF",
-  "YouTube": "#FF0000",
+  "Scratch": "#ffab19",
+  "Japanese Scratch-Wiki": "#4d97ff",
+  "YouTube": "#ff0000",
   "GitHub": "#333"
 };
 
