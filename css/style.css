@@ -373,7 +373,7 @@ header nav a:hover {
 
 .search-bar {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   flex-wrap: wrap;
 }
