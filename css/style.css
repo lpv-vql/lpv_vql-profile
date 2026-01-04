@@ -22,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 40px;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 main {
@@ -55,7 +55,6 @@ header nav a {
     color: var(--accent-color);
     text-decoration: none;
     margin-right: 20px;
-    font-weight: bold;
 }
 
 header nav a:hover {
@@ -128,7 +127,6 @@ header nav a:hover {
     margin-bottom: 4px;
     color: var(--accent-color);
     text-decoration: none;
-    font-weight: bold;
 }
 
 .account-link:hover {
@@ -214,7 +212,6 @@ header nav a:hover {
 .home-tools .tool-title {
     margin: 0;
     font-size: 1.1em;
-    font-weight: bold;
 }
 
 .home-tools .tool-title a {
