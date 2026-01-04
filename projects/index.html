@@ -12,8 +12,13 @@
 <main>
   <h1>作品検索</h1>
 
-  <div class="card">
+  <div class="card search-bar">
+  <div class="search-group">
     <input id="search" type="text" placeholder="作品名で検索">
+  </div>
+
+  <div class="sort-group">
+    <label for="sort">並び替え</label>
     <select id="sort">
       <option value="views">参照数</option>
       <option value="loves">好き数</option>
@@ -21,6 +26,8 @@
       <option value="time">新しい順</option>
     </select>
   </div>
+  </div>
+
 
   <div id="project-list" class="project-grid"></div>
 </main>
