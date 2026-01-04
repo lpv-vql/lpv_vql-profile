@@ -43,7 +43,7 @@ function render(list) {
       </a>
       <div class="project-title">${p.title}</div>
       <div class="project-stats">
-        👁 ${p.views} / ❤ ${p.loves} / ⭐ ${p.faves}
+        👁 ${p.views}  ❤ ${p.loves}  ⭐ ${p.faves}
       </div>
     `;
 
