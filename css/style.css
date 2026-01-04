@@ -40,7 +40,7 @@ h1, h2 {
 header {
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     width: 100%;
     background: var(--bg-soft);
     box-shadow: var(--shadow-sm);
