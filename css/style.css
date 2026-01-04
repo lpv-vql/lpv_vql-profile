@@ -37,8 +37,9 @@ h1, h2 {
 
 /* ===== Header ===== */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    z-index: 100;
     background: var(--bg-soft);
     box-shadow: var(--shadow-sm);
 }
