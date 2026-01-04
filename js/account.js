@@ -15,39 +15,35 @@ const accountsBySite = {
   ]
 };
 
-const siteFavicons = {
-  "Scratch": "https://scratch.mit.edu/favicon.ico",
-  "Japanese Scratch-Wiki": "https://ja.scratch-wiki.info/favicon.ico",
-  "YouTube": "https://favicon.im/youtube.com",
-  "GitHub": "https://github.githubassets.com/favicons/favicon.svg"
+const siteColors = {
+  "Scratch": "#4D97FF",
+  "Japanese Scratch-Wiki": "#4D97FF",
+  "YouTube": "#FF0000",
+  "GitHub": "#333"
 };
 
 const accountContainer = document.getElementById("account-list");
 
 if (accountContainer) {
   Object.keys(accountsBySite).forEach(site => {
-    // カード本体
     const card = document.createElement("div");
     card.className = "account-card";
 
-    // ヘッダー（ファビコン＋サイト名）
     const header = document.createElement("div");
     header.className = "account-card-header";
 
-    const favicon = document.createElement("img");
-    favicon.src = siteFavicons[site];
-    favicon.alt = site + " icon";
-    favicon.className = "account-card-favicon";
+    const colorDot = document.createElement("span");
+    colorDot.className = "account-card-dot";
+    colorDot.style.backgroundColor = siteColors[site] || "#ccc"; // 色がない場合はグレー
 
     const title = document.createElement("span");
     title.textContent = site;
     title.className = "account-card-title";
 
-    header.appendChild(favicon);
+    header.appendChild(colorDot);
     header.appendChild(title);
     card.appendChild(header);
 
-    // アカウントリンク
     const list = document.createElement("div");
     list.className = "account-card-list";
     accountsBySite[site].forEach(acc => {
