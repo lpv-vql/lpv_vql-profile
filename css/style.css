@@ -336,6 +336,36 @@ header nav a:hover {
     line-height: 1.6;
 }
 
+/* ===== Project Page Styles ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 10px;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project-title {
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.project-stats {
+  font-size: 0.85em;
+  color: var(--text-light);
+}
+
+
 /* ===== Responsive ===== */
 @media (max-width: 500px) {
     .summary-card {
