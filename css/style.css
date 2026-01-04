@@ -1,4 +1,4 @@
-/* ===== 定数 ===== */
+/* ===== 定数 (Variables) ===== */
 :root {
     --bg-color: #ffffff;
     --bg-soft: #f9f9f9;
@@ -7,21 +7,21 @@
     --text-muted: #555555;
     --text-light: #666666;
     --accent-color: #000000;
-    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
-    --shadow-md: 0 6px 20px rgba(0,0,0,0.07);
-    --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+    --border-color: #dddddd;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
     --radius: 10px;
     --transition: 0.2s;
 }
 
 /* ===== Global Styles ===== */
 body {
+    margin: 0;
+    padding: 40px 0 0;
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-top: 40px;
     line-height: 1.6;
 }
 
@@ -46,15 +46,14 @@ header {
     box-shadow: var(--shadow-sm);
 }
 
-/* Navigation */
 header nav {
     padding: 15px 30px;
 }
 
 header nav a {
+    margin-right: 20px;
     color: var(--accent-color);
     text-decoration: none;
-    margin-right: 20px;
     font-weight: bold;
 }
 
@@ -62,18 +61,17 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* ===== footer ===== */
+/* ===== Footer ===== */
 .site-footer {
+    padding: 30px 10px 20px;
     text-align: center;
     font-size: 0.75em;
-    color: ver(--text-muted);
-    padding: 30px 10px 20px;
+    color: var(--text-muted);
 }
 
-
 /* ===== Cards (Common) ===== */
-.card {
-    background: white;
+.card, .project-card {
+    background: #ffffff;
     border-radius: var(--radius);
     padding: 25px;
     margin-bottom: 30px;
@@ -81,17 +79,17 @@ header nav a:hover {
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.card:hover {
+.card:hover, .project-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
 /* ===== Account Card ===== */
 .account-card {
-    background: var(--bg-soft);
-    border-radius: var(--radius);
     padding: 15px 20px;
     margin-bottom: 15px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
     transition: background var(--transition);
 }
 
@@ -107,10 +105,10 @@ header nav a:hover {
 }
 
 .account-card-dot {
+    display: inline-block;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    display: inline-block;
 }
 
 .account-card-title {
@@ -165,7 +163,7 @@ header nav a:hover {
     line-height: 1.8;
 }
 
-/* ===== Recommended project ===== */
+/* ===== Recommended Projects ===== */
 .recommended h2 {
     margin-bottom: 10px;
 }
@@ -196,11 +194,11 @@ header nav a:hover {
 
 .home-tools .tool-card {
     flex: 1 1 0;
+    padding: 15px 10px;
+    margin-bottom: 0;
     background: var(--bg-soft);
     border-radius: var(--radius);
-    padding: 15px 10px;
     text-align: center;
-    margin-bottom: 0;
     box-shadow: none;
     transform: none;
     transition: background var(--transition);
@@ -247,8 +245,8 @@ header nav a:hover {
 }
 
 .summary strong {
-    font-size: 1.4em;
     display: block;
+    font-size: 1.4em;
 }
 
 .summary span {
@@ -258,17 +256,17 @@ header nav a:hover {
 
 /* Stats List */
 .stats {
-    list-style: none;
-    padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    padding: 0;
+    list-style: none;
 }
 
 .stats li {
+    padding: 15px 10px;
     background: var(--bg-soft);
     border-radius: var(--radius);
-    padding: 15px 10px;
     text-align: center;
     font-size: 0.95em;
     transition: background var(--transition);
@@ -280,17 +278,17 @@ header nav a:hover {
 
 .stats li span {
     display: block;
+    margin-top: 5px;
     font-size: 1.4em;
     font-weight: bold;
     color: var(--text-main);
-    margin-top: 5px;
 }
 
 /* More Link */
 .more {
     display: block;
-    text-align: right;
     margin-top: 5px;
+    text-align: right;
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
@@ -319,7 +317,7 @@ header nav a:hover {
 }
 
 .tool-title a {
-    color: #111;
+    color: var(--text-main);
     text-decoration: none;
 }
 
@@ -342,18 +340,7 @@ header nav a:hover {
 }
 
 .project-card {
-    background: white;
-    border-radius: var(--radius);
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition), box-shadow var(--transition);
     text-align: center;
-}
-
-.project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
 }
 
 .project-card img {
@@ -362,8 +349,8 @@ header nav a:hover {
 }
 
 .project-title {
-    font-weight: bold;
     margin: 8px 0 4px;
+    font-weight: bold;
 }
 
 .project-stats {
@@ -372,57 +359,57 @@ header nav a:hover {
 }
 
 .search-bar {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .search-group {
-  flex: 1;
+    flex: 1;
 }
 
 .search-group input {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 1em;
-  border-radius: var(--radius);
-  border: 1px solid #ddd;
-  background: var(--bg-color);
-  transition: border var(--transition), background var(--transition);
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1em;
+    transition: border var(--transition), background var(--transition);
 }
 
 .search-group input:focus {
-  outline: none;
-  border-color: #aaa;
-  background: #fafafa;
+    outline: none;
+    border-color: #aaaaaa;
+    background: var(--bg-soft);
 }
 
 .sort-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9em;
-  color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    color: var(--text-muted);
 }
 
 .sort-group select {
-  padding: 10px 12px;
-  border-radius: var(--radius);
-  border: 1px solid #ddd;
-  background: var(--bg-color);
-  font-size: 0.95em;
-  cursor: pointer;
-  transition: border var(--transition), background var(--transition);
+    padding: 10px 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: border var(--transition), background var(--transition);
 }
 
 .sort-group select:hover {
-  background: #fafafa;
+    background: var(--bg-soft);
 }
 
 .sort-group select:focus {
-  outline: none;
-  border-color: #aaa;
+    outline: none;
+    border-color: #aaaaaa;
 }
 
 /* ===== Responsive ===== */
@@ -438,10 +425,10 @@ header nav a:hover {
         grid-template-columns: 1fr;
     }
     .search-bar {
-    flex-direction: column;
-    align-items: stretch;
+        flex-direction: column;
+        align-items: stretch;
     }
     .sort-group {
-    justify-content: flex-end;
+        justify-content: flex-end;
     }
 }
