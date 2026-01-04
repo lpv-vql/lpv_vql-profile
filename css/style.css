@@ -35,30 +35,36 @@ h1, h2 {
     color: var(--text-main);
 }
 
-/* ===== Navigation ===== */
-nav {
-    background-color: var(--bg-soft);
-    padding: 15px 30px;
-    box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(6px);
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-soft);
+  box-shadow: var(--shadow-sm);
 }
 
-nav a {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin-right: 20px;
-    font-weight: bold;
+/* Navigation */
+header nav {
+  padding: 15px 30px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+header nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
 }
 
 /* ===== footer ===== */
 .site-footer {
   text-align: center;
   font-size: 0.75em;
-  color: #888;
+  color: ver(--text-muted);
   padding: 30px 10px 20px;
 }
 
