@@ -1,6 +1,11 @@
 function renderTools(targetId, mode = "page") {
   const tools = [
     {
+      title: "sb3のJSON編集",
+      url: "https://lpv-vql.github.io/sb3-JSON/",
+      desc: "sb3ファイルのJSONを編集することができます。"
+    },
+    {
       title: "scratch-text-costume",
       url: "https://lpv-vql.github.io/scratch-text-costume/",
       desc: "Scratchのコスチュームに文字を自動で設定します。"
